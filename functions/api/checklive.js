@@ -1,5 +1,5 @@
 export const onRequest = () => {
-    fetch('https://api.live.bilibili.com/room/v1/Room/get_info?room_id=31914326').then((res) => res.json()).then((data) => {
+    return fetch('https://api.live.bilibili.com/room/v1/Room/get_info?room_id=31914326').then((res) => res.json()).then((data) => {
         const isLive = data.data.live_status === 1;
         return new Response(JSON.stringify({
                 live: isLive,
