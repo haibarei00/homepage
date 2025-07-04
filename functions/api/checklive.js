@@ -1,4 +1,5 @@
-export const onRequest = async () => {
+export const onRequest = async (context) => {
+  const { env } = context;
   if (!env.CF_ACCOUNT_ID || !env.CF_KEY) {
     return new Response(
       JSON.stringify({
@@ -51,9 +52,6 @@ export const onRequest = async () => {
       }),
       {
         headers: {
-          "Cache-Control": "public, max-age=300", // Cache for 5 minutes
-        },
-        headers: {
           "Content-Type": "application/json",
         },
       }
@@ -80,7 +78,9 @@ export const onRequest = async () => {
     .then((res) => res.json())
     .then(async (data) => {
       if (data.success) {
-        const udata = JSON.parse(data.result[0].results[0].text.replace('\\', ''));
+        const udata = JSON.parse(
+          data.result[0].results[0].text.replace("\\", "")
+        );
         const isLive = udata.data.live_status === 1;
         let saved = false;
         try {
@@ -125,7 +125,7 @@ export const onRequest = async () => {
         JSON.stringify({
           status: 500,
           error: "Failed to fetch live status",
-          saved: saved
+          saved: saved,
         })
       );
     });
