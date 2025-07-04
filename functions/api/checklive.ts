@@ -12,5 +12,13 @@ export const onRequestGet = makePagesFunction(() => {
                 title: data.data.title
             })
         };
-    })
+    }).catch((error) => {
+        console.error("Error fetching live status:", error);
+        return {
+            status: 500,
+            body: JSON.stringify({
+                error: "Failed to fetch live status"
+            })
+        };
+    });
 });

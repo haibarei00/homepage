@@ -39,7 +39,7 @@ label {
   width: 80%;
   height: 100%;
   margin: auto;
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   bottom: 0;
@@ -88,9 +88,8 @@ label {
 }
 
 .footer {
-  background: #111;
-  position: fixed;
-  bottom: 0;
+  min-height: 120px;
+  height: 120px;
   width: 100%;
 }
 
@@ -182,14 +181,15 @@ label {
 }
 
 .overlay-link {
-      position: absolute;
-      top: 0;
-      justify-self: center;;
-      border-radius: 50%;
-      z-index: 2;
-      background-color: rgba(0, 0, 0, 0); /* fully transparent */
-      text-indent: -9999px;
-      overflow: hidden;
-      cursor: pointer;
-      display: block;
-    }
+  position: absolute;
+  top: 0;
+  justify-self: center;
+  ;
+  border-radius: 50%;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0);
+  text-indent: -9999px;
+  overflow: hidden;
+  cursor: pointer;
+  display: block;
+}
