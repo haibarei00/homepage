@@ -17,12 +17,11 @@ export function App() {
   const unofficial: LinkData[] = unofficialData;
   const [isLive, setIsLive] = useState(false);
   useEffect(() => {
-    fetch("/api/checklive").then((res) => res.json()).then((res) => {
-      if (res.status === 0) {
-        const data = res.data;
+    fetch("/api/checklive").then((res) => res.json()).then((data) => {
+      if (data.status === 0) {
         setIsLive(data.live);
       } else {
-        console.error("Failed to fetch live status:", res);
+        console.error("Failed to fetch live status:", data);
       }
     });
   }, [])
