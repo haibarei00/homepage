@@ -1,8 +1,5 @@
 {
   "name": "haibarei-homepage-functions",
   "private": true,
-  "type": "module",
-  "devDependencies": {
-    "vite-plugin-cloudflare-functions": "workspace:*"
-  }
+  "type": "module"
 }

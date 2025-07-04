@@ -3,8 +3,7 @@ import "./app.css";
 import officialData from "./assets/official";
 import unofficialData from "./assets/unofficial";
 import type { JSX } from "preact/jsx-runtime";
-import { useFunctions } from "vite-plugin-cloudflare-functions/client";
-import { useState } from "preact/hooks";
+import { useEffect, useState } from "preact/hooks";
 
 type LinkData = {
   image: string | JSX.Element;
@@ -16,17 +15,17 @@ type LinkData = {
 export function App() {
   const official: LinkData[] = officialData;
   const unofficial: LinkData[] = unofficialData;
-  const client = useFunctions();
   const [isLive, setIsLive] = useState(false);
-  client.get("/api/checklive").then((res) => {
-    if (res.status === 0) {
-      const data = res.data;
-      setIsLive(data.live);
-    } else {
-      console.error("Failed to fetch live status:", res);
-    }
-  });
-
+  useEffect(() => {
+    fetch("/api/checklive").then((res) => res.json()).then((res) => {
+      if (res.status === 0) {
+        const data = res.data;
+        setIsLive(data.live);
+      } else {
+        console.error("Failed to fetch live status:", res);
+      }
+    });
+  }, [])
   return (
     <>
       <div class="splash-container">
