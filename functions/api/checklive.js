@@ -48,7 +48,9 @@ export const onRequest = async (context) => {
   if (last.time && last.time > Date.now() - 60 * 1000 * 5) {
     return new Response(
       JSON.stringify({
+        status: 0,
         live: last.live,
+        time: last.time,
       }),
       {
         headers: {
@@ -98,6 +100,7 @@ export const onRequest = async (context) => {
 
         return new Response(
           JSON.stringify({
+            status: 0,
             live: isLive,
             saved: saved,
           })
