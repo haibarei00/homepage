@@ -176,6 +176,7 @@ label {
 
 .avatar-container {
   position: relative;
+  margin-left: 16px;
   margin-right: 16px;
   flex-shrink: 0;
 }
