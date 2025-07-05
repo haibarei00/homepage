@@ -1,5 +1,5 @@
 
-import { FaXTwitter, FaBilibili, FaYoutube } from 'react-icons/fa6';
+import { FaXTwitter, FaBilibili, FaYoutube, FaQq } from 'react-icons/fa6';
 const official = [
     {
         "title": "Twitter",
@@ -17,13 +17,19 @@ const official = [
         "title": "マシュマロ",
         "image": "/marshmallow.jpg",
         "description": "I'd LOVE to eat!",
-        "href": "https://marshmallow-qa.com/xt4j338mc1a5dc3"
+        "href": "https://pome.vip/haibarei"
     },
     {
         "title": "YouTube",
         "image": <FaYoutube size={'100%'}/>,
         "description": "",
         "href": "https://www.youtube.com/@haibarei"
+    },
+    {
+        "title": "QQ 群",
+        "image": <FaQq size={'100%'}/>,
+        "description": "",
+        "href": "https://qm.qq.com/cgi-bin/qm/qr?k=1DIwZWnPr_OHPd-Rm4cug0uP2hluMenk&jump_from=webapi&authKey=j0cdh1WHRl3VMN83Nc8UTyjRG/PmT00X+QMvxZc2j3raDzjb02sYhs3OM6WZOwMo"
     }
 ]
 
