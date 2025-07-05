@@ -12,6 +12,7 @@
     "preact": "^10.26.9",
     "purecss": "^3.0.0",
     "react-icons": "^5.5.0",
+    "typewriter-effect": "^2.22.0",
     "vite-plugin-inline-source": "^4.0.0"
   },
   "devDependencies": {

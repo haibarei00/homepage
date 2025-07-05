@@ -2,7 +2,9 @@ import headLogo from "/head.jpg";
 import officialData from "./assets/official";
 import unofficialData from "./assets/unofficial";
 import type { JSX } from "preact/jsx-runtime";
-import { useEffect, useState } from "preact/hooks";
+import { useEffect, useRef, useState } from "preact/hooks";
+// @ts-ignore
+import Typewriter from 'typewriter-effect/dist/core';
 
 type LinkData = {
   image: string | JSX.Element;
@@ -14,6 +16,7 @@ type LinkData = {
 export function App() {
   const official: LinkData[] = officialData;
   const unofficial: LinkData[] = unofficialData;
+  const typeRef = useRef<HTMLParagraphElement | null>(null);
   const [isLive, setIsLive] = useState(false);
   const [isBirthDay, setIsBirthday] = useState(false);
   useEffect(() => {
@@ -33,6 +36,15 @@ export function App() {
       today.getDate() === birthday.getDate()
     ) {
       setIsBirthday(true);
+    }
+    if (typeRef.current) {
+      const typewriter = new Typewriter(typeRef.current, {
+        loop: false,
+        delay: 50,
+      });
+      typewriter
+        .typeString("Assign me a mission, and I will ensure its completion.")
+        .start();
     }
   }, []);
   return (
@@ -64,8 +76,8 @@ export function App() {
           <p class="splash-subhead" style={{ fontSize: "1.6rem" }}>
             灰羽零
           </p>
-          <p class="splash-subhead">
-            Assign me a mission, and I will ensure its completion.
+          <p class="splash-subhead" ref={typeRef} style={{ minHeight: '3em', lineHeight: '1.5em' }}>
+            {/* Assign me a mission, and I will ensure its completion. */}
           </p>
           <p>
             Profile🪽
