@@ -176,6 +176,22 @@ label {
   line-height: 1;
 }
 
+.birthday-hat {
+  position: absolute;
+  bottom: 60%;
+  left: 53%;
+  width: 88px;
+  height: 94px;
+  justify-self: center;
+  color: white;
+  rotate: 45deg;
+  font-size: 1.5rem;
+  padding: 3px 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  line-height: 1;
+}
+
 .avatar-container {
   position: relative;
   margin-left: 16px;

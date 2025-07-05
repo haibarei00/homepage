@@ -15,6 +15,7 @@ export function App() {
   const official: LinkData[] = officialData;
   const unofficial: LinkData[] = unofficialData;
   const [isLive, setIsLive] = useState(false);
+  const [isBirthDay, setIsBirthday] = useState(false);
   useEffect(() => {
     fetch("/api/checklive")
       .then((res) => res.json())
@@ -25,6 +26,14 @@ export function App() {
           console.error("Failed to fetch live status:", data);
         }
       });
+    const today = new Date();
+    const birthday = new Date(today.getFullYear(), 6, 7); // July
+    if (
+      today.getMonth() === birthday.getMonth() &&
+      today.getDate() === birthday.getDate()
+    ) {
+      setIsBirthday(true);
+    }
   }, []);
   return (
     <>
@@ -38,6 +47,9 @@ export function App() {
               width={150}
               height={150}
             />
+            {isBirthDay ? <>
+              <img src="/birthday-hat.png" class="birthday-hat" alt="Birthday Hat" width={88} height={94} />
+            </> : null}
             {isLive ? (
               <>
                 <a
