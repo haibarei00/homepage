@@ -1,5 +1,4 @@
 import headLogo from "/head.jpg";
-import "./app.css";
 import officialData from "./assets/official";
 import unofficialData from "./assets/unofficial";
 import type { JSX } from "preact/jsx-runtime";
