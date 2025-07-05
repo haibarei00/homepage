@@ -91,7 +91,7 @@ export function App() {
             Dislikes: chocolate and sticky things
           </p>
           {official.map((linkCard) => (
-            <p style={{ width: "100%" }}>
+            <div style={{ width: "100%" }} class="def">
               <div class="card-wrapper">
                 <img
                   src="/behind.png"
@@ -112,7 +112,7 @@ export function App() {
                   </div>
                 </a>
               </div>
-            </p>
+            </div>
           ))}
           <hr
             style={{
@@ -122,7 +122,7 @@ export function App() {
             }}
           />
           {unofficial.map((linkCard) => (
-            <p style={{ width: "100%" }}>
+            <div style={{ width: "100%" }} class="def">
               <div class="card-wrapper">
                 <img
                   src="/behind.png"
@@ -143,7 +143,7 @@ export function App() {
                   </div>
                 </a>
               </div>
-            </p>
+            </div>
           ))}
         </div>
         <div class="footer"></div>
