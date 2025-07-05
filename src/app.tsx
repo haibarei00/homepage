@@ -77,7 +77,7 @@ export function App() {
             灰羽零
           </p>
           <p class="splash-subhead" ref={typeRef} style={{ minHeight: '3em', lineHeight: '1.5em' }}>
-            {/* Assign me a mission, and I will ensure its completion. */}
+            <noscript>Assign me a mission, and I will ensure its completion.</noscript>
           </p>
           <p>
             Profile🪽
