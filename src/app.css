@@ -130,6 +130,8 @@ label {
   color: inherit;
   max-width: 400px;
   margin: 10px auto;
+  z-index: 20;
+  position: relative;
 }
 
 .card:hover {
@@ -193,4 +195,29 @@ label {
   overflow: hidden;
   cursor: pointer;
   display: block;
+}
+
+.behind-popout {
+  position: absolute;
+  bottom: 50%;
+  left: 0;
+  opacity: 0;
+  transform: translateY(50%);
+  width: 45px;
+  transition: left 0.3s ease, bottom 0.3s ease, opacity 0.2s ease;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.card-wrapper:hover .behind-popout {
+  left: -45px;
+  bottom: 55%;
+  opacity: 1;
+}
+
+.card-wrapper {
+  position: relative;
+  justify-self: center;
+  max-width: 400px;
+  width: 100%;
 }

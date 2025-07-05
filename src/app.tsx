@@ -17,14 +17,16 @@ export function App() {
   const unofficial: LinkData[] = unofficialData;
   const [isLive, setIsLive] = useState(false);
   useEffect(() => {
-    fetch("/api/checklive").then((res) => res.json()).then((data) => {
-      if (data.status === 0) {
-        setIsLive(data.live);
-      } else {
-        console.error("Failed to fetch live status:", data);
-      }
-    });
-  }, [])
+    fetch("/api/checklive")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.status === 0) {
+          setIsLive(data.live);
+        } else {
+          console.error("Failed to fetch live status:", data);
+        }
+      });
+  }, []);
   return (
     <>
       <div class="splash-container">
@@ -67,19 +69,26 @@ export function App() {
           </p>
           {official.map((linkCard) => (
             <p style={{ width: "100%" }}>
-              <a href={linkCard.href} target="_blank" class="card">
-                <div class="card-icon">
-                  {typeof linkCard.image === "string" ? (
-                    <img src={linkCard.image} alt="icon" class="card-icon" />
-                  ) : (
-                    <div>{linkCard.image}</div>
-                  )}
-                </div>
-                <div class="card-content">
-                  <div class="card-title">{linkCard.title}</div>
-                  <div class="card-description">{linkCard.description}</div>
-                </div>
-              </a>
+              <div class="card-wrapper">
+                <img
+                  src="/behind.png"
+                  alt="behind"
+                  class="behind-popout"
+                />
+                <a href={linkCard.href} target="_blank" class="card">
+                  <div class="card-icon">
+                    {typeof linkCard.image === "string" ? (
+                      <img src={linkCard.image} alt="icon" class="card-icon" />
+                    ) : (
+                      <div>{linkCard.image}</div>
+                    )}
+                  </div>
+                  <div class="card-content">
+                    <div class="card-title">{linkCard.title}</div>
+                    <div class="card-description">{linkCard.description}</div>
+                  </div>
+                </a>
+              </div>
             </p>
           ))}
           <hr
@@ -91,19 +100,26 @@ export function App() {
           />
           {unofficial.map((linkCard) => (
             <p style={{ width: "100%" }}>
-              <a href={linkCard.href} target="_blank" class="card">
-                <div class="card-icon">
-                  {typeof linkCard.image === "string" ? (
-                    <img src={linkCard.image} alt="icon" class="card-icon" />
-                  ) : (
-                    <div>{linkCard.image}</div>
-                  )}
-                </div>
-                <div class="card-content">
-                  <div class="card-title">{linkCard.title}</div>
-                  <div class="card-description">{linkCard.description}</div>
-                </div>
-              </a>
+              <div class="card-wrapper">
+                <img
+                  src="/behind.png"
+                  alt="behind"
+                  class="behind-popout"
+                />
+                <a href={linkCard.href} target="_blank" class="card">
+                  <div class="card-icon">
+                    {typeof linkCard.image === "string" ? (
+                      <img src={linkCard.image} alt="icon" class="card-icon" />
+                    ) : (
+                      <div>{linkCard.image}</div>
+                    )}
+                  </div>
+                  <div class="card-content">
+                    <div class="card-title">{linkCard.title}</div>
+                    <div class="card-description">{linkCard.description}</div>
+                  </div>
+                </a>
+              </div>
             </p>
           ))}
         </div>
