@@ -7,7 +7,8 @@ import inlineSource from "vite-plugin-inline-source";
 export default defineConfig({
   plugins: [preact({
     prerender: {
-      enabled: true
+      enabled: true,
+      renderTarget: "#app"
     }
   }), CloudflarePagesFunctions({
     root: './functions',
