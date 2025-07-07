@@ -1,9 +1,9 @@
 // @ts-expect-error
 import headLogo from "./head.jpg?w=147&h=144";
 // @ts-expect-error
-import birthdayHatImage from "./birthday-hat.png?w=61&h=116";
+import birthdayHatImage from "./birthday-hat.png?w=92&h=174";
 // @ts-expect-error
-import behindImage from "./behind.png?w=45&h=63";
+import behindImage from "./behind.png?w=68&h=95";
 import officialData from "./assets/official";
 import unofficialData from "./assets/unofficial";
 import type { JSX } from "preact/jsx-runtime";

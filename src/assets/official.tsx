@@ -1,7 +1,7 @@
 
 import { FaXTwitter, FaBilibili, FaYoutube, FaQq } from 'react-icons/fa6';
 // @ts-expect-error
-import behindImage from "../marshmallow.jpg?w=40&h=40";
+import behindImage from "../marshmallow.jpg?w=60&h=60";
 const official = [
     {
         "title": "Twitter",
