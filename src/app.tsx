@@ -1,4 +1,9 @@
-import headLogo from "/head.jpg";
+// @ts-expect-error
+import headLogo from "./head.jpg?w=147&h=144";
+// @ts-expect-error
+import birthdayHatImage from "./birthday-hat.png?w=61&h=116";
+// @ts-expect-error
+import behindImage from "./behind.png?w=45&h=63";
 import officialData from "./assets/official";
 import unofficialData from "./assets/unofficial";
 import type { JSX } from "preact/jsx-runtime";
@@ -60,7 +65,7 @@ export function App() {
               height={150}
             />
             {isBirthDay ? <>
-              <img src="/birthday-hat.png" class="birthday-hat" alt="Birthday Hat" width={61} height={116} />
+              <img src={birthdayHatImage} class="birthday-hat" alt="Birthday Hat" width={61} height={116} />
             </> : null}
             {isLive ? (
               <>
@@ -94,7 +99,7 @@ export function App() {
             <div style={{ width: "100%" }} class="def">
               <div class="card-wrapper">
                 <img
-                  src="/behind.png"
+                  src={behindImage}
                   alt="behind"
                   class="behind-popout"
                 />
@@ -125,7 +130,7 @@ export function App() {
             <div style={{ width: "100%" }} class="def">
               <div class="card-wrapper">
                 <img
-                  src="/behind.png"
+                  src={behindImage}
                   alt="behind"
                   class="behind-popout"
                 />

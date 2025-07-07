@@ -1,5 +1,7 @@
 
 import { FaXTwitter, FaBilibili, FaYoutube, FaQq } from 'react-icons/fa6';
+// @ts-expect-error
+import behindImage from "../marshmallow.jpg?w=40&h=40";
 const official = [
     {
         "title": "Twitter",
@@ -15,7 +17,7 @@ const official = [
     },
     {
         "title": "マシュマロ",
-        "image": "/marshmallow.jpg",
+        "image": behindImage,
         "description": "I'd LOVE to eat!",
         "href": "https://pome.vip/haibarei"
     },
