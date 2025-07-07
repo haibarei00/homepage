@@ -20,15 +20,6 @@ export function App() {
   const [isLive, setIsLive] = useState(false);
   const [isBirthDay, setIsBirthday] = useState(false);
   useEffect(() => {
-    fetch("/api/checklive")
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.status === 0) {
-          setIsLive(data.live);
-        } else {
-          console.error("Failed to fetch live status:", data);
-        }
-      });
     const today = new Date();
     const birthday = new Date(today.getFullYear(), 6, 7); // July
     if (
@@ -46,6 +37,15 @@ export function App() {
         .typeString("Assign me a mission, and I will ensure its completion.")
         .start();
     }
+    fetch("/api/checklive")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.status === 0) {
+          setIsLive(data.live);
+        } else {
+          console.error("Failed to fetch live status:", data);
+        }
+      });
   }, []);
   return (
     <>
