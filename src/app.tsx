@@ -60,7 +60,7 @@ export function App() {
               height={150}
             />
             {isBirthDay ? <>
-              <img src="/birthday-hat.png" class="birthday-hat" alt="Birthday Hat" width={88} height={94} />
+              <img src="/birthday-hat.png" class="birthday-hat" alt="Birthday Hat" width={61} height={116} />
             </> : null}
             {isLive ? (
               <>

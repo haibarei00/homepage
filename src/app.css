@@ -181,13 +181,13 @@ label {
   position: absolute;
   bottom: 60%;
   left: 53%;
-  width: 88px;
-  height: 94px;
+  width: 61px;
+  height: 116px;
   justify-self: center;
   color: white;
   rotate: 45deg;
   font-size: 1.5rem;
-  padding: 3px 12px;
+  margin: 3px 12px;
   border-radius: 8px;
   font-weight: bold;
   line-height: 1;
@@ -204,7 +204,6 @@ label {
   position: absolute;
   top: 0;
   justify-self: center;
-  ;
   border-radius: 50%;
   z-index: 2;
   background-color: rgba(0, 0, 0, 0);
